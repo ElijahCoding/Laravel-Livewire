@@ -10,7 +10,9 @@ class PostCreate extends Component
 
     public function addPost()
     {
-        dd('working');
+        auth()->user()->posts()->create(['body' => $this->body]);
+
+        $this->body = '';
     }
 
     public function render()
