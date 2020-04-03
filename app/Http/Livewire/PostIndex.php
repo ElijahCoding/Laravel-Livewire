@@ -4,22 +4,25 @@ namespace App\Http\Livewire;
 
 use App\Post;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 class PostIndex extends Component
 {
+    use WithPagination;
+
     protected $listeners = [
         'postAdded'
     ];
 
     public function postAdded()
     {
-        
+
     }
 
     public function render()
     {
         return view('livewire.post-index', [
-            'posts' => Post::latest()->get()
+            'posts' => Post::latest()->paginate(3)
         ]);
     }
 }
