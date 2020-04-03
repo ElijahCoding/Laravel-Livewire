@@ -1,3 +1,5 @@
 <div>
-    {{-- A good traveler has no fixed plans and is not intent upon arriving. --}}
+    @foreach($posts as $post)
+        <livewire:post-single :post="$post" :key="$post->id" />
+    @endforeach
 </div>
