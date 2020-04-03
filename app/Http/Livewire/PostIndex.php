@@ -16,7 +16,7 @@ class PostIndex extends Component
 
     public function postAdded()
     {
-
+        session()->flash('message', 'post added');
     }
 
     public function render()
